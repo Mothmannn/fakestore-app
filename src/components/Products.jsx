@@ -50,9 +50,15 @@ function Products() {
         Products
       </h1>
       <p className="text-center">Choose from a variety of stylish products</p>
-      <Row>
+      <Row className="justify-content-center">
         {products.map((product) => (
-          <Col key={product.id} className="mt-4">
+          <Col
+            key={product.id}
+            xs={12}
+            sm={6}
+            md={4}
+            className="mt-4 d-flex justify-content-center"
+          >
             <Card
               className="h-100 d-flex flex-column"
               style={{ width: "18rem" }}
