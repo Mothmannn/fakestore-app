@@ -1,0 +1,40 @@
+.custom-carousel .carousel-caption {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  margin: 0;
+  padding: 0.4rem 0.6rem;
+  color: #000;
+  border-radius: 8px;
+  text-align: center;
+  max-width: calc(100% - 24px);
+  z-index: 5;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+
+.custom-carousel .carousel-caption h3 {
+  font-size: clamp(1rem, 2.6vw, 1.25rem); 
+  margin: 0 0 0.25rem;
+  line-height: 1.1;
+  font-weight: 700;
+}
+.custom-carousel .carousel-caption p {
+  font-size: clamp(0.75rem, 1.4vw, 0.9rem);
+  margin: 0;
+  color: rgba(0,0,0,0.85);
+}
+
+
+@media (max-width: 480px) {
+  .custom-carousel .carousel-caption p {
+    display: none;
+  }
+  .custom-carousel .carousel-caption {
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    padding: 0.3rem 0.45rem;
+  }
+}

@@ -36,12 +36,19 @@ function HomePage() {
   if (error) return <div>{error}</div>;
 
   return (
-    /* make the background of the page pale blue */
-    <Container className="mt-4 text-center bg-light p-4 rounded" style={{ backgroundColor: "#f0f8ff" }}>
+    <Container className="custom-carousel mt-5 text-center shadow p-4 rounded bg-light">
       <Row>
         <Col>
-          <h1 style={{ fontSize: "2rem", fontFamily: "Arial, sans-serif", fontWeight: "bold" }}>Welcome to Fake Store!</h1>
-          <p>
+          <h1
+            style={{
+              fontSize: "2rem",
+              fontFamily: "Arial, sans-serif",
+              fontWeight: "bold",
+            }}
+          >
+            Welcome to Fake Store!
+          </h1>
+          <p >
             Shop from our wide variety of fake products at affordable fake
             prices!
           </p>
@@ -52,16 +59,19 @@ function HomePage() {
         </Col>
       </Row>
       <Row>
-        
-        <Col className= "d-flex justify-content-center">
+        <Col className="d-flex justify-content-center">
           <Carousel
             activeIndex={activeIndex}
             onSelect={(idx) => setActiveIndex(idx)}
-            style={{ width: "50%" }}
+            style={{ height: 360, width: "50%", objectFit: "contain" }}
           >
             {products.map((p) => (
               <Carousel.Item key={p.id}>
-                <img className="w-100 mx-auto d-block" src={p.image} alt={p.title} />
+                <img
+                  className="d-flex w-100 mx-auto"
+                  src={p.image}
+                  alt={p.title}
+                />
                 <Carousel.Caption>
                   <h3 className="text-dark bg-primary rounded">{p.title}</h3>
                 </Carousel.Caption>
@@ -72,7 +82,7 @@ function HomePage() {
       </Row>
       <Row>
         <Col>
-          <Button variant="primary" className="mt-4" href="/products">
+          <Button variant="primary" className="d-flex justify-content-center mt-4" href="/products">
             Shop Now
           </Button>
         </Col>
